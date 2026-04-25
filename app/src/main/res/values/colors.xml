@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#FFB4AA</color>
+    <color name="primary_container">#FF5545</color>
+    <color name="on_primary">#690003</color>
+    <color name="on_primary_container">#5C0002</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#B4C6F4</color>
+    <color name="secondary_container">#34466D</color>
+    <color name="on_secondary">#1D2F55</color>
+    <color name="on_secondary_container">#A3B5E2</color>
+
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#53E16F</color>
+    <color name="tertiary_container">#00A741</color>
+    <color name="on_tertiary">#003911</color>
+    <color name="on_tertiary_container">#00320E</color>
+
+    <!-- Error Colors -->
+    <color name="error">#FFB4AB</color>
+    <color name="error_container">#93000A</color>
+    <color name="on_error">#690005</color>
+    <color name="on_error_container">#FFDAD6</color>
+
+    <!-- Background Colors -->
+    <color name="background">#131313</color>
+    <color name="on_background">#E5E2E1</color>
+    <color name="surface">#131313</color>
+    <color name="surface_dim">#131313</color>
+    <color name="surface_bright">#393939</color>
+    <color name="surface_container_lowest">#0E0E0E</color>
+    <color name="surface_container_low">#1C1B1B</color>
+    <color name="surface_container">#201F1F</color>
+    <color name="surface_container_high">#2A2A2A</color>
+    <color name="surface_container_highest">#353534</color>
+
+    <!-- On Surface Colors -->
+    <color name="on_surface">#E5E2E1</color>
+    <color name="on_surface_variant">#E7BDB7</color>
+
+    <!-- Outline Colors -->
+    <color name="outline">#AD8883</color>
+    <color name="outline_variant">#5D3F3B</color>
+
+    <!-- Inverse Colors -->
+    <color name="inverse_surface">#E5E2E1</color>
+    <color name="inverse_on_surface">#313030</color>
+    <color name="inverse_primary">#C0000A</color>
+
+    <!-- Surface Tint -->
+    <color name="surface_tint">#FFB4AA</color>
+
+    <!-- Material Design Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="dark_gray">#2C2C2C</color>
+
+    <!-- Status Colors -->
+    <color name="success">#34C759</color>
+    <color name="warning">#FFD60A</color>
+    <color name="danger">#FF3B30</color>
+    <color name="info">#0A84FF</color>
+
+    <!-- SOS Red -->
+    <color name="sos_red">#FF3B30</color>
+    <color name="sos_red_dark">#C0000A</color>
+</resources>

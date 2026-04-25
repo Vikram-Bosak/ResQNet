@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131313"
+    tools:context=".ui.activities.MainActivity">
+
+    <!-- Top App Bar -->
+    <LinearLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#131313"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ResQNet"
+            android:textColor="#FF3B30"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1E1E1E"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="#34C759"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:id="@+id/tvScanningStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mesh Active"
+                android:textColor="#E5E2E1"
+                android:textSize="10sp"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvConnectedCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Connected"
+            android:textColor="#FF3B30"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- SOS Button Section -->
+    <LinearLayout
+        android:id="@+id/sosSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar">
+
+        <FrameLayout
+            android:layout_width="256dp"
+            android:layout_height="256dp">
+
+            <!-- Glowing Aura -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sos_glow" />
+
+            <!-- SOS Button -->
+            <Button
+                android:id="@+id/btnSOS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sos_button"
+                android:text="SOS"
+                android:textColor="#FFFFFF"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:elevation="8dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Emergency Signal"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="WORKS WITHOUT INTERNET"
+            android:textColor="#FF3B30"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+    </LinearLayout>
+
+    <!-- Quick Actions Grid -->
+    <GridLayout
+        android:id="@+id/quickActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/sosSection">
+
+        <!-- Broadcast Alert -->
+        <Button
+            android:id="@+id/btnBroadcast"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/action_button"
+            android:text="Broadcast Alert"
+            android:textColor="#E5E2E1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_dialog_alert"
+            android:drawablePadding="8dp" />
+
+        <!-- Send Message -->
+        <Button
+            android:id="@+id/btnChat"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/action_button"
+            android:text="Send Message"
+            android:textColor="#E5E2E1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_dialog_email"
+            android:drawablePadding="8dp" />
+
+        <!-- Nearby Devices -->
+        <Button
+            android:id="@+id/btnNearby"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/action_button"
+            android:text="Nearby Devices"
+            android:textColor="#E5E2E1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="8dp" />
+
+        <!-- Map -->
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/action_button"
+            android:text="Map"
+            android:textColor="#E5E2E1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_mapmode"
+            android:drawablePadding="8dp" />
+    </GridLayout>
+
+    <!-- Emergency Mode Toggle -->
+    <LinearLayout
+        android:id="@+id/emergencyModeSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1E1E1E"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/quickActions">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_dialog_alert"
+            android:tint="#FF3B30"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMERGENCY MODE"
+                android:textColor="#FF3B30"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Locking UI for high-priority utility"
+                android:textColor="#9E9E9E"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEmergencyMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/emergency_toggle"
+            android:text="OFF"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#131313"
+        android:orientation="horizontal"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/nav_item_active"
+            android:text="Home"
+            android:textColor="#FF3B30"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_home"
+            android:drawablePadding="4dp" />
+
+        <Button
+            android:id="@+id/navChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/nav_item"
+            android:text="Chat"
+            android:textColor="#9E9E9E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_dialog_email"
+            android:drawablePadding="4dp" />
+
+        <Button
+            android:id="@+id/navNearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/nav_item"
+            android:text="Nearby"
+            android:textColor="#9E9E9E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="4dp" />
+
+        <Button
+            android:id="@+id/navMap"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/nav_item"
+            android:text="Map"
+            android:textColor="#9E9E9E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_mapmode"
+            android:drawablePadding="4dp" />
+
+        <Button
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/nav_item"
+            android:text="Settings"
+            android:textColor="#9E9E9E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:drawableTop="@android:drawable/ic_menu_preferences"
+            android:drawablePadding="4dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
