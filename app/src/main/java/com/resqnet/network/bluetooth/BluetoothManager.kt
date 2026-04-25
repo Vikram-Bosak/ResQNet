@@ -1,7 +1,12 @@
 package com.resqnet.network.bluetooth
 
 import android.annotation.SuppressLint
-import android.bluetooth.*
+import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
+import android.bluetooth.BluetoothManager
+import android.bluetooth.le.BluetoothLeScanner
+import android.bluetooth.le.ScanCallback
+import android.bluetooth.le.ScanResult
 import android.content.Context
 import android.os.Build
 import android.util.Log
@@ -17,7 +22,7 @@ class BluetoothManager @Inject constructor(
 ) {
 
     private val bluetoothAdapter: BluetoothAdapter? by lazy {
-        val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+        val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as android.bluetooth.BluetoothManager
         bluetoothManager.adapter
     }
 

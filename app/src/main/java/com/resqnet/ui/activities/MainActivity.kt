@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Settings Button
-        findViewById<android.widget.Button>(R.id.btnSettings).setOnClickListener {
+        findViewById<android.widget.Button>(R.id.navSettings).setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
     }

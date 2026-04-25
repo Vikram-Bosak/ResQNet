@@ -3,6 +3,7 @@ package com.resqnet.ui.activities
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.resqnet.data.models.Device
 import com.resqnet.domain.usecases.GetDevicesUseCase
@@ -19,7 +20,7 @@ class NearbyDevicesViewModel @Inject constructor(
     private val wifiDirectManager: WiFiDirectManager
 ) : ViewModel() {
 
-    val devices: LiveData<List<Device>> = getDevicesUseCase()
+    val devices: LiveData<List<Device>> = getDevicesUseCase().asLiveData()
 
     private val _isScanning = MutableLiveData<Boolean>()
     val isScanning: LiveData<Boolean> = _isScanning

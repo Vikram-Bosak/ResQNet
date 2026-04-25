@@ -20,7 +20,8 @@ import com.resqnet.data.database.converters.*
     MessageTypeConverter::class,
     DeviceTypeConverter::class,
     ConnectionTypeConverter::class,
-    LocationDataConverter::class
+    LocationDataConverter::class,
+    StringListConverter::class
 )
 abstract class ResQNetDatabase : RoomDatabase() {
 

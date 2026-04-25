@@ -167,7 +167,7 @@
             android:textColor="#E5E2E1"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:drawableTop="@drawable/ic_contacts"
             android:drawablePadding="8dp" />
 
         <!-- Map -->
@@ -182,7 +182,7 @@
             android:textColor="#E5E2E1"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_mapmode"
+            android:drawableTop="@drawable/ic_map"
             android:drawablePadding="8dp" />
     </GridLayout>
 
@@ -258,7 +258,7 @@
             android:textColor="#FF3B30"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_home"
+            android:drawableTop="@drawable/ic_home"
             android:drawablePadding="4dp" />
 
         <Button
@@ -284,7 +284,7 @@
             android:textColor="#9E9E9E"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_myplaces"
+            android:drawableTop="@drawable/ic_contacts"
             android:drawablePadding="4dp" />
 
         <Button
@@ -297,7 +297,7 @@
             android:textColor="#9E9E9E"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_mapmode"
+            android:drawableTop="@drawable/ic_map"
             android:drawablePadding="4dp" />
 
         <Button
@@ -310,7 +310,7 @@
             android:textColor="#9E9E9E"
             android:textSize="10sp"
             android:textStyle="bold"
-            android:drawableTop="@android:drawable/ic_menu_preferences"
+            android:drawableTop="@drawable/ic_settings"
             android:drawablePadding="4dp" />
     </LinearLayout>
 

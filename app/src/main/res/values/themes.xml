@@ -22,7 +22,7 @@
 
         <!-- Background color -->
         <item name="android:windowBackground">@color/background</item>
-        <item name="colorBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/on_background</item>
 
         <!-- Surface color -->
