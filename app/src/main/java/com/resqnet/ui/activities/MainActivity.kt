@@ -91,33 +91,44 @@ class MainActivity : AppCompatActivity() {
             sendSOS()
         }
 
+        // Menu Button
+        findViewById<android.widget.ImageButton>(R.id.btnMenu).setOnClickListener {
+            Toast.makeText(this, "Menu clicked", Toast.LENGTH_SHORT).show()
+        }
+
         // Broadcast Button
-        findViewById<android.widget.Button>(R.id.btnBroadcast).setOnClickListener {
+        findViewById<android.widget.LinearLayout>(R.id.btnBroadcast).setOnClickListener {
             startActivity(Intent(this, BroadcastActivity::class.java))
         }
 
         // Chat Button
-        findViewById<android.widget.Button>(R.id.btnChat).setOnClickListener {
+        findViewById<android.widget.LinearLayout>(R.id.btnChat).setOnClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
         }
 
-        // Nearby Devices Button
-        findViewById<android.widget.Button>(R.id.btnNearby).setOnClickListener {
-            startActivity(Intent(this, NearbyDevicesActivity::class.java))
-        }
-
-        // Map Button
-        findViewById<android.widget.Button>(R.id.btnMap).setOnClickListener {
-            startActivity(Intent(this, MapActivity::class.java))
-        }
-
         // Emergency Mode Button
-        findViewById<android.widget.Button>(R.id.btnEmergencyMode).setOnClickListener {
+        findViewById<android.widget.LinearLayout>(R.id.btnEmergencyMode).setOnClickListener {
             startActivity(Intent(this, EmergencyModeActivity::class.java))
         }
 
-        // Settings Button
-        findViewById<android.widget.Button>(R.id.navSettings).setOnClickListener {
+        // Bottom Navigation
+        findViewById<android.widget.LinearLayout>(R.id.navHome).setOnClickListener {
+            // Already on home
+        }
+
+        findViewById<android.widget.LinearLayout>(R.id.navChat).setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
+
+        findViewById<android.widget.LinearLayout>(R.id.navNearby).setOnClickListener {
+            startActivity(Intent(this, NearbyDevicesActivity::class.java))
+        }
+
+        findViewById<android.widget.LinearLayout>(R.id.navMap).setOnClickListener {
+            startActivity(Intent(this, MapActivity::class.java))
+        }
+
+        findViewById<android.widget.LinearLayout>(R.id.navSettings).setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
@@ -139,8 +150,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.isScanning.observe(this) { isScanning ->
             // Update scanning indicator
-            val tvScanningStatus = findViewById<android.widget.TextView>(R.id.tvScanningStatus)
-            tvScanningStatus.text = if (isScanning) "Scanning..." else "Mesh Active"
+            val tvMeshStatus = findViewById<android.widget.TextView>(R.id.tvMeshStatus)
+            tvMeshStatus.text = if (isScanning) "Scanning..." else "Mesh Active"
         }
     }
 

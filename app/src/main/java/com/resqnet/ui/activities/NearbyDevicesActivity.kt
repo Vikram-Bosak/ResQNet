@@ -17,8 +17,6 @@ class NearbyDevicesActivity : AppCompatActivity() {
     private val viewModel: NearbyDevicesViewModel by viewModels()
     private lateinit var deviceAdapter: DeviceAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var btnRefresh: ImageButton
-    private lateinit var tvDeviceCount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +28,34 @@ class NearbyDevicesActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        recyclerView = findViewById(R.id.recyclerViewDevices)
-        btnRefresh = findViewById(R.id.btnRefresh)
-        tvDeviceCount = findViewById(R.id.tvDeviceCount)
+        recyclerView = findViewById(R.id.rvNearbyUsers)
+        val tvNodeCount = findViewById<TextView>(R.id.tvNodeCount)
+        val btnBroadcastLocation = findViewById<Button>(R.id.btnBroadcastLocation)
 
-        btnRefresh.setOnClickListener {
+        btnBroadcastLocation.setOnClickListener {
             viewModel.refreshDevices()
+            Toast.makeText(this, "Broadcasting location...", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<ImageButton>(R.id.btnBack).setOnClickListener {
             finish()
+        }
+
+        // Bottom navigation
+        findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.navChat).setOnClickListener {
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.navMap).setOnClickListener {
+            startActivity(Intent(this, MapActivity::class.java))
+        }
+
+        findViewById<LinearLayout>(R.id.navSettings).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
 
@@ -65,11 +81,13 @@ class NearbyDevicesActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.devices.observe(this) { devices ->
             deviceAdapter.submitList(devices)
-            tvDeviceCount.text = "${devices.size} Devices Found"
+            val tvNodeCount = findViewById<TextView>(R.id.tvNodeCount)
+            tvNodeCount.text = "${devices.size} Nodes Connected"
         }
 
         viewModel.isScanning.observe(this) { isScanning ->
-            btnRefresh.isEnabled = !isScanning
+            val btnBroadcastLocation = findViewById<Button>(R.id.btnBroadcastLocation)
+            btnBroadcastLocation.isEnabled = !isScanning
             if (isScanning) {
                 Toast.makeText(this, "Scanning for devices...", Toast.LENGTH_SHORT).show()
             }
